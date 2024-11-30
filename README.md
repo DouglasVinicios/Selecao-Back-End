@@ -1,12 +1,13 @@
-### Requisitos do sistema
-#### Obrigatórios:
+# Requisitos do sistema
 
 - O sistema deverá gerenciar os usuários, permitindo-os se cadastrar e editar seu cadastro; 
 - O sistema deverá criptografar a senha do usuário;
 
+```http
 POST     | api/create/user         | Cria um novo usuário
+```
 
-# Request
+### Request
 ```json
 {
     "name": "teste",
@@ -15,7 +16,7 @@ POST     | api/create/user         | Cria um novo usuário
     "isAdmin": false
 }
 ```
-# Response
+### Response
 ```json
 {
     "name": "teste",
@@ -28,31 +29,36 @@ POST     | api/create/user         | Cria um novo usuário
 
 - O sistema poderá autenticar o usuário através do e-mail e senha do usuário e, nas outras requisições, utilizar apenas um token de identificação;
 
+```http
 POST     | api/login               | Faz o login
+```
 
-# Request
+### Request
 ```json
 {
     "name": "teste",
     "email": "example@example.com",
 }
 ```
-# Response
+### Response
 ```json
 {
     "token": "user-access-token"
 }
 ```
 
+```http
 PUT      | api/update/user         | Edita um usuário
+```
 
-# Request
+### Request
 Headers
 ```json
 {
     "Authorization":"Bearer user-access-token",
 }
 ```
+Body
 ```json
 {
     "name": "teste",
@@ -61,7 +67,7 @@ Headers
     "isAdmin": true
 }
 ```
-# Response
+### Response
 ```json
 {
     "id": 18,
@@ -76,9 +82,11 @@ Headers
 - O sistema deverá retornar comentários a todos que o acessarem, porém deverá permitir inserir comentários apenas a usuários autenticados;
 - O sistema deverá retornar qual é o autor do comentário e dia e horário da postagem;
 
+```http
 GET|HEAD | api/comments            | Lista todos os 
+```
 
-# Response
+### Response
 ```json
 {
     "data": [
@@ -102,20 +110,24 @@ GET|HEAD | api/comments            | Lista todos os
 }
 ```
 
+```http
 POST     | api/create/comments     | Cria um novo 
+```
 
-# Request
+### Request
 Headers
 ```json
 {
     "Authorization":"Bearer user-access-token",
 }
+```
+Body
 ```json
 {
     "comment": "Um comentario"
 }
 ```
-# Response
+### Response
 ```json
 {
     "comment": "Um comentario",
@@ -136,22 +148,25 @@ Headers
 
 - O sistema deverá permitir o usuário editar os próprios comentários (exibindo a data de criação do comentário e data da última edição);
 
+```http
 PUT      | api/update/comments     | Edita um comentário
+```
 
-# Request
+### Request
 Headers
 ```json
 {
     "Authorization":"Bearer user-access-token",
 }
 ```
+Body
 ```json
 {
     "id": 15,
     "comment": "Um outro teste de comentario"
 }
 ```
-# Response
+### Response
 ```json
 {
     "comment": "Um outro teste de comentario",
@@ -172,16 +187,18 @@ Headers
 
 - O sistema deverá possuir histórico de edições do comentário;
 
+```http
 GET|HEAD | api/history/comments    | Lista o histórico de todos os comentários
+```
 
-# Request
+### Request
 Headers
 ```json
 {
     "Authorization":"Bearer user-access-token",
 }
 ```
-# Response
+### Response
 ```json
 {
     "data": [
@@ -224,18 +241,24 @@ Headers
 - O sistema deverá permitir o usuário excluir os próprios comentários;
 - O sistema deverá possuir um usuário administrador que pode excluir todos os comentários;
 
+```http
 DELETE   | api/delete/comment/{id} | Deleta um comentário
+```
 
-# Request
+### Request
 Headers
 ```json
 {
     "Authorization":"Bearer user-access-token",
 }
 ```
-# Response
-- status code 200
+### Response
+```http
+status code 200
+```
 
-- Implementação de testes automatizados utilizando phpunit
+### Implementação de testes automatizados utilizando phpunit
 
-- php artisan test
+```code
+php artisan test
+```
