@@ -1,11 +1,11 @@
 # Requisitos do sistema
 ## Cria um novo usuário
-- O sistema deverá gerenciar os usuários, permitindo-os se cadastrar e editar seu cadastro; 
-- O sistema deverá criptografar a senha do usuário;
+- `O sistema deverá gerenciar os usuários, permitindo-os se cadastrar e editar seu cadastro`; 
+- `O sistema deverá criptografar a senha do usuário`;
 
 ### Endpoint
 ```http
-POST     | api/create/user
+POST    api/create/user
 ```
 
 ### Request
@@ -29,11 +29,11 @@ POST     | api/create/user
 ```
 ---
 ## Realizar o login
-- O sistema poderá autenticar o usuário através do e-mail e senha do usuário e, nas outras requisições, utilizar apenas um token de identificação;
+- `O sistema poderá autenticar o usuário através do e-mail e senha do usuário e, nas outras requisições, utilizar apenas um token de identificação`;
 
 ### Endpoint
 ```http
-POST     | api/login               
+POST    api/login               
 ```
 
 ### Request
@@ -53,7 +53,7 @@ POST     | api/login
 ## Editar um usuário
 ### Endpoint
 ```http
-PUT      | api/update/user         
+PUT     api/update/user         
 ```
 ### Request
 Headers
@@ -84,12 +84,12 @@ Body
 ```
 ---
 ## Listar todos os comentários
-- O sistema deverá retornar comentários a todos que o acessarem, porém deverá permitir inserir comentários apenas a usuários autenticados;
-- O sistema deverá retornar qual é o autor do comentário e dia e horário da postagem;
+- `O sistema deverá retornar comentários a todos que o acessarem, porém deverá permitir inserir comentários apenas a usuários autenticados`;
+- `O sistema deverá retornar qual é o autor do comentário e dia e horário da postagem`;
 
 ### Endpoint
 ```http
-GET | api/comments             
+GET     api/comments             
 ```
 
 ### Response
@@ -119,7 +119,7 @@ GET | api/comments
 ## Criar um novo comentário
 ### Endpoint
 ```http
-POST     | api/create/comments      
+POST    api/create/comments      
 ```
 ### Request
 Headers
@@ -154,11 +154,11 @@ Body
 ```
 ---
 ## Editar um comentário
-- O sistema deverá permitir o usuário editar os próprios comentários (exibindo a data de criação do comentário e data da última edição);
+- `O sistema deverá permitir o usuário editar os próprios comentários (exibindo a data de criação do comentário e data da última edição)`;
 
 ### Endpoint
 ```http
-PUT      | api/update/comments     
+PUT     api/update/comments     
 ```
 ### Request
 Headers
@@ -194,11 +194,11 @@ Body
 ```
 ---
 ## Listar o histórico de todos os comentários
-- O sistema deverá possuir histórico de edições do comentário;
+- `O sistema deverá possuir histórico de edições do comentário`;
 
 ## Endpoint
 ```http
-GET | api/history/comments    
+GET     api/history/comments    
 ```
 ### Request
 Headers
@@ -248,12 +248,12 @@ Headers
 ```
 ---
 ## Deletar um comentário
-- O sistema deverá permitir o usuário excluir os próprios comentários;
-- O sistema deverá possuir um usuário administrador que pode excluir todos os comentários;
+- `O sistema deverá permitir o usuário excluir os próprios comentários`;
+- `O sistema deverá possuir um usuário administrador que pode excluir todos os comentários`;
 
 ### Endpoint
 ```http
-DELETE   | api/delete/comment/{id} 
+DELETE  api/delete/comment/{id} 
 ```
 ### Request
 Headers
@@ -264,7 +264,7 @@ Headers
 ```
 ### Response
 ```http
-status code 200
+200 OK
 ```
 ---
 ### Implementação de testes automatizados utilizando phpunit
