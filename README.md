@@ -4,7 +4,7 @@
 - `O sistema deverá criptografar a senha do usuário`;
 
 ### Endpoint
-```http
+```code
 POST    api/create/user
 ```
 
@@ -32,7 +32,7 @@ POST    api/create/user
 - `O sistema poderá autenticar o usuário através do e-mail e senha do usuário e, nas outras requisições, utilizar apenas um token de identificação`;
 
 ### Endpoint
-```http
+```code
 POST    api/login               
 ```
 
@@ -52,7 +52,7 @@ POST    api/login
 ---
 ## Editar um usuário
 ### Endpoint
-```http
+```code
 PUT     api/update/user         
 ```
 ### Request
@@ -88,7 +88,7 @@ Body
 - `O sistema deverá retornar qual é o autor do comentário e dia e horário da postagem`;
 
 ### Endpoint
-```http
+```code
 GET     api/comments             
 ```
 
@@ -118,7 +118,7 @@ GET     api/comments
 ---
 ## Criar um novo comentário
 ### Endpoint
-```http
+```code
 POST    api/create/comments      
 ```
 ### Request
@@ -157,7 +157,7 @@ Body
 - `O sistema deverá permitir o usuário editar os próprios comentários (exibindo a data de criação do comentário e data da última edição)`;
 
 ### Endpoint
-```http
+```code
 PUT     api/update/comments     
 ```
 ### Request
@@ -197,7 +197,7 @@ Body
 - `O sistema deverá possuir histórico de edições do comentário`;
 
 ## Endpoint
-```http
+```code
 GET     api/history/comments    
 ```
 ### Request
@@ -252,7 +252,7 @@ Headers
 - `O sistema deverá possuir um usuário administrador que pode excluir todos os comentários`;
 
 ### Endpoint
-```http
+```code
 DELETE  api/delete/comment/{id} 
 ```
 ### Request
